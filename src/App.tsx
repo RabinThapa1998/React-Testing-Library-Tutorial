@@ -4,9 +4,9 @@ import "./App.css";
 import { PaletteMode } from "@mui/material";
 import { getDesignTokens } from "./components/theme/theme";
 import { ThemeProvider } from "@mui/material";
-import HomePage from "./pages/HomePage";
+import HomePage from "./pages/home-page/HomePage";
 import { Layout } from "./components/layout/layout";
-import AboutPage from "./pages/AboutPage";
+import AboutPage from "./pages/about-page/AboutPage";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 export type colorModeProps = {
