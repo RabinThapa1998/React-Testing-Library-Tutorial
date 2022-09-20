@@ -6,28 +6,19 @@ import {
   cleanup,
 } from "@testing-library/react";
 import HomePage from "../HomePage";
+it("renders button on the dom", () => {
+  render(<HomePage />);
+  const ButtonElement = screen.getByRole("button", { name: "Generate" });
+  screen.debug();
+  expect(ButtonElement).toBeInTheDocument();
+  expect(ButtonElement).toHaveStyle(
+    "padding: 6px 16px;font-weight: 500;    text-transform: uppercase;"
+  );
+});
 
-afterEach(cleanup);
-
-it("renders homepage on the screen", () => {
+it("renders image on the dom", () => {
   render(<HomePage />);
-  const headerElement = screen.getByText(/homepage/i);
-  expect(headerElement).toBeInTheDocument();
-});
-it("renders homepage with color black on the screen", () => {
-  render(<HomePage />);
-  const headerElement = screen.getByText(/homepage/i);
-  //   screen.debug();
-  expect(headerElement).toHaveStyle("font-size: 3rem");
-  expect(headerElement).toHaveStyle("font-weight: 400");
-});
-it("renders generate button on the screen", () => {
-  render(<HomePage />);
-  const btnElement = screen.getByTestId("generate");
-  expect(btnElement).toBeInTheDocument();
-});
-it("renders age field on the screen", () => {
-  render(<HomePage />);
-  const ageTextFieldElement = screen.getByTestId("age-1");
-  expect(ageTextFieldElement).toBeInTheDocument();
+  const ImageElement = screen.getByAltText("bg-img");
+  screen.debug();
+  expect(ImageElement).toBeInTheDocument();
 });

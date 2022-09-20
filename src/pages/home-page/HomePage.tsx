@@ -71,6 +71,7 @@ function HomePage() {
           </Button>
         </Grid>
       </Grid>
+      <img src="" alt="bg-img" />
       <Grid container spacing={5}>
         {cardList.map((item, index) => (
           <Grid item xs={3} key={item.name} data-testid={index}>
